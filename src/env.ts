@@ -8,9 +8,16 @@ const envSchema = z.object({
     DEBUG: z.string().optional(),
 });
 
+
+/**
+ * Environment options used by the program.
+ * @public
+ */
+export interface Env extends z.infer<typeof envSchema> { }
+
 declare global {
     namespace NodeJS {
-        interface ProcessEnv extends z.infer<typeof envSchema> {}
+        interface ProcessEnv extends Env {}
     }
 }
 
