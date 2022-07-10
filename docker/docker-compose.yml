@@ -1,0 +1,28 @@
+services:
+    dev:
+      container_name: main_dev
+      extends:
+        file: $PWD/docker/compose_fragments/service_base.yml
+        service: base
+      image: dev-image
+      build:
+        context: .
+        dockerfile: $PWD/docker/dev.Dockerfile
+      volumes:
+        - $PWD/scripts:/usr/bin/app/scripts
+        - $PWD/generated:/usr/bin/app/generated
+        - $PWD/src:/usr/bin/app/src
+        - $PWD/.env:/usr/bin/app/.env
+      command: yarn dev
+
+    prod:
+      container_name: main
+      extends:
+        file: $PWD/docker/compose_fragments/service_base.yml
+        service: base
+      image: prod-image
+      build:
+        context: .
+        dockerfile: $PWD/docker/node.Dockerfile
+      command: yarn prod
+
