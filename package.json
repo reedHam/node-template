@@ -9,10 +9,10 @@
     "private": true,
     "scripts": {
         "dev": "tsc --watch",
-        "dev:docker": "docker-compose -f generated/docker/docker-compose.yml up dev",
+        "dev:docker": "yarn build && docker-compose -f generated/docker/docker-compose.yml up dev",
         "build": "tsc && docker-compose -f docker/compose_fragments/network.yml -f docker/compose_fragments/version.yml -f docker/docker-compose.yml --project-directory . config > generated/docker/docker-compose.yml",
         "start": "tsc && node build/main.js",
-        "start:docker": "docker-compose -f generated/docker/docker-compose.yml up prod",
+        "start:docker": "yarn build && docker-compose -f generated/docker/docker-compose.yml up prod",
         "lint": "eslint src",
         "fmt": "prettier --write ."
     },
@@ -27,6 +27,7 @@
         "@typescript-eslint/parser": "^5.30.5",
         "eslint": "^8.19.0",
         "eslint-plugin-jsdoc": "^39.3.3",
+        "prettier": "^2.7.1",
         "typescript": "^4.7.4"
     }
 }

@@ -11,7 +11,7 @@
         "isolatedModules": true,
         "noUncheckedIndexedAccess": true,
         "sourceMap": true,
-        "outDir": "./build",
+        "outDir": "./build"
     },
     "include": ["src/**/*.ts", "src/**/*.tsx"],
     "exclude": ["node_modules"]

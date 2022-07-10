@@ -1,4 +1,4 @@
 # https://docs.docker.com/compose/compose-file/compose-file-v3/#secrets
 
 networks:
-  node_network:
+    node_network:
