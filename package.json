@@ -10,8 +10,7 @@
     "scripts": {
         "build": "tsc",
         "lint": "eslint src",
-        "fmt": "prettier --write .",
-        "docs": "typedoc --out docs src/main.ts"
+        "fmt": "prettier --write ."
     },
     "dependencies": {
         "debug": "^4.3.4",
