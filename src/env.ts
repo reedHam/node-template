@@ -15,4 +15,11 @@ declare global {
 }
 
 console.log(`Loading ${process.env.NODE_ENV} environment.`);
-export default envSchema.parse(process.env);
+
+try {
+    envSchema.parse(process.env);
+} catch (e) {
+    console.error("Failed to parse environment variables.");
+    console.error(e);
+    process.exit(1);
+}
