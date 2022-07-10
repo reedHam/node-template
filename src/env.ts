@@ -8,21 +8,6 @@ const envSchema = z.object({
     DEBUG: z.string().optional(),
 });
 
-
-/**
- * Environment options used by the program.
- * @public
- */
-export interface Env extends z.infer<typeof envSchema> { }
-
-declare global {
-    namespace NodeJS {
-        interface ProcessEnv extends Env {}
-    }
-}
-
-console.log(`Loading ${process.env.NODE_ENV} environment.`);
-
 try {
     envSchema.parse(process.env);
 } catch (e) {
@@ -30,3 +15,11 @@ try {
     console.error(e);
     process.exit(1);
 }
+
+declare global {
+    namespace NodeJS {
+        interface ProcessEnv extends z.infer<typeof envSchema> {}
+    }
+}
+
+console.log(`Loading ${process.env.NODE_ENV} environment.`);
