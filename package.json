@@ -10,7 +10,8 @@
     "scripts": {
         "dev": "tsc --watch",
         "dev:docker": "yarn build && docker-compose -f generated/docker/docker-compose.yml up dev",
-        "build": "tsc && docker-compose -f docker/compose_fragments/network.yml -f docker/compose_fragments/version.yml -f docker/docker-compose.yml --project-directory . config > generated/docker/docker-compose.yml",
+        "build": "tsc && yarn build:docker",
+        "build:docker": "mkdir -p generated/docker && docker-compose -f docker/compose_fragments/network.yml -f docker/compose_fragments/version.yml -f docker/docker-compose.yml --project-directory . config > generated/docker/docker-compose.yml",
         "start": "tsc && node build/main.js",
         "start:docker": "yarn build && docker-compose -f generated/docker/docker-compose.yml up prod",
         "lint": "eslint src",
