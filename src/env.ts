@@ -19,7 +19,7 @@ console.log(`Loading ${process.env.NODE_ENV} environment.`);
 try {
     envSchema.parse(process.env);
 } catch (e) {
-    console.error("Failed to parse environment variables.");
+    console.error('Failed to parse environment variables.');
     console.error(e);
     process.exit(1);
 }

@@ -9,6 +9,7 @@
     "scripts": {
         "dev": "pm2-dev start src/main.ts",
         "lint": "eslint src",
+        "fmt": "prettier --write .",
         "postinstall": "$(yarn bin)/pm2 install typescript"
     },
     "dependencies": {
