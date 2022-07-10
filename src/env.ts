@@ -9,9 +9,9 @@ const envSchema = z.object({
 });
 
 declare global {
-  namespace NodeJS {
-    interface ProcessEnv extends z.infer<typeof envSchema> { }
-  }
+    namespace NodeJS {
+        interface ProcessEnv extends z.infer<typeof envSchema> {}
+    }
 }
 
 console.log(`Loading ${process.env.NODE_ENV} environment.`);

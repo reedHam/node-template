@@ -1,28 +1,28 @@
 {
-  "name": "node-template",
-  "version": "0.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:reedHam/node-template.git",
-  "author": "Reed Hambrook <reed.hambrook@gmail.com>",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "dev": "pm2-dev start src/main.ts",
-    "lint": "eslint src",
-    "postinstall": "$(yarn bin)/pm2 install typescript"
-  },
-  "dependencies": {
-    "debug": "^4.3.4",
-    "dotenv": "^16.0.1",
-    "zod": "^3.17.3"
-  },
-  "devDependencies": {
-    "@types/debug": "^4.1.7",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
-    "eslint": "^8.19.0",
-    "pm2": "^5.2.0",
-    "ts-node": "^10.8.2",
-    "typescript": "^4.7.4"
-  }
+    "name": "node-template",
+    "version": "0.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:reedHam/node-template.git",
+    "author": "Reed Hambrook <reed.hambrook@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "dev": "pm2-dev start src/main.ts",
+        "lint": "eslint src",
+        "postinstall": "$(yarn bin)/pm2 install typescript"
+    },
+    "dependencies": {
+        "debug": "^4.3.4",
+        "dotenv": "^16.0.1",
+        "zod": "^3.17.3"
+    },
+    "devDependencies": {
+        "@types/debug": "^4.1.7",
+        "@typescript-eslint/eslint-plugin": "^5.30.5",
+        "@typescript-eslint/parser": "^5.30.5",
+        "eslint": "^8.19.0",
+        "pm2": "^5.2.0",
+        "ts-node": "^10.8.2",
+        "typescript": "^4.7.4"
+    }
 }
