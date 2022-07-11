@@ -6,7 +6,7 @@ WORKDIR /usr/bin/app
 
 COPY package.json ./
 COPY yarn.lock ./
-COPY ./build ./
+COPY ./build ./build
 RUN yarn install --production
 
 CMD node build/src.js

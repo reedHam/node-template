@@ -1,6 +1,6 @@
 services:
     dev:
-        container_name: main_dev
+        container_name: dev
         extends:
             file: $PWD/docker/compose_fragments/service_base.yml
             service: base
@@ -13,15 +13,16 @@ services:
             - $PWD/generated:/usr/bin/app/generated
             - $PWD/src:/usr/bin/app/src
             - $PWD/.env:/usr/bin/app/.env
+            - $PWD/tsconfig.json:/usr/bin/app/tsconfig.json
         command: yarn dev
 
     prod:
-        container_name: main
+        container_name: prod
         extends:
             file: $PWD/docker/compose_fragments/service_base.yml
             service: base
         image: prod-image
         build:
             context: $PWD/
-            dockerfile: $PWD/docker/node.Dockerfile
-        command: yarn prod
+            dockerfile: $PWD/docker/prod.Dockerfile
+        command: yarn start
